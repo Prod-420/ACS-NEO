@@ -1,2 +1,2 @@
 Посилання на програму пошуку контролерів ACS NEO в мережі
-https://github.com/Prod-420/ACS-NEO/releases/tag/Soft
+https://github.com/Prod-420/ACS-NEO/releases/tag/Free
