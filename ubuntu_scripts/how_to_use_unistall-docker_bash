@@ -1,0 +1,9 @@
+To use this script:
+
+    Copy and paste the code above into a new file and save it with a name such as uninstall-docker.sh.
+    Move the file to the directory where your .yml file or Dockerfile is located.
+    Open a terminal in that directory and run the command chmod +x uninstall-docker.sh to make the script executable.
+    Run the command ./uninstall-docker.sh to execute the script.
+    Reboot your system to ensure that all changes are applied.
+
+If you have any questions, feel free to ask ChatGPT.
