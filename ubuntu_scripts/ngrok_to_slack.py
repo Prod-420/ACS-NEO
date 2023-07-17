@@ -5,7 +5,7 @@ import socket
 import uuid
 
 # Slack webhook URL
-slack_webhook_url = 'https://hooks.slack.com/services/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'
+slack_webhook_url = 'https://hooks.slack.com/services/your_slack_Tocken'
 
 # Device name
 device_name = "My Device"
