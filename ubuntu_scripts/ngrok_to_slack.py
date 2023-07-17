@@ -5,7 +5,7 @@ import socket
 import uuid
 
 # Slack webhook URL
-slack_webhook_url = 'https://hooks.slack.com/services/your_slack_Tocken'
+slack_webhook_url = 'https://your_slack_Tocken'
 
 # Device name
 device_name = "My Device"
@@ -27,9 +27,12 @@ def get_ngrok_url():
     # Parse the JSON response
     res_json = res.json()
     # Get the public URL where ngrok is forwarding HTTP traffic
-    url = res_json['tunnels'][0]['public_url']
-    print(f'ngrok URL: {url}')
-    return url
+    for tunnel in res_json['tunnels']:
+        url = tunnel['public_url']
+        if url.startswith('https'):
+            print(f'ngrok URL: {url}')
+            return url
+    return None
 
 def send_to_slack(url):
     # Prepare the message
@@ -41,9 +44,9 @@ def send_to_slack(url):
     if response.status_code == 200:
         print('Message sent to Slack')
     else:
-        print('Failed to send message to Slack')
+        print(f'Failed to send message to Slack, status code: {response.status_code}, response: {response.text}')
 
-# Remember the last URL we've seen
+ # Remember the last URL we've seen
 last_url = None
 
 while True:
